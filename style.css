@@ -1,0 +1,267 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+
+
+
+
+
+
+
+
+body {
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+}
+
+header.main {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 0 2rem;
+  margin-bottom: -4.1875em;
+}
+header.main .wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 67.5em;
+}
+
+.logo {
+  display: block;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+.logo svg path {
+  fill: currentColor;
+}
+.logo:hover {
+  opacity: 0.6;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 2rem;
+  padding: 0.1875rem 0.75rem 0.1875rem 1rem;
+  text-decoration: none;
+  color: white;
+  font-size: 0.9375em;
+  font-weight: 500;
+  line-height: 1.5rem;
+  transition: background-color 0.3s ease;
+}
+.btn .arrow path {
+  fill: none;
+  stroke-width: 2px;
+  stroke: currentColor;
+  transition: transform 0.3s ease;
+}
+.btn .arrow path.arrow-line {
+  transform: scaleX(0);
+  transform-origin: center;
+}
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.btn:hover .arrow path.arrow-line {
+  transform: scaleX(1);
+}
+.btn:hover .arrow path.arrow-tip {
+  transform: translateX(0.125rem);
+}
+
+nav.menu {
+  display: flex;
+  align-items: center;
+}
+nav.menu .menu-drop-wrapper {
+  display: flex;
+  align-items: center;
+}
+nav.menu .menu-link {
+  display: block;
+  font-size: 0.9375em;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  padding: 1.625rem 1.25rem;
+  transition: opacity 0.3s ease;
+}
+nav.menu .menu-link:hover {
+  opacity: 0.6;
+}
+nav.menu .menu-content {
+  display: none;
+  pointer-events: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  transform: perspective(1200px) perspective(2200px);
+  transform-origin: 50% 0;
+}
+nav.menu .active {
+  pointer-events: auto;
+  z-index: 2;
+}
+nav.menu .menu-arrow {
+  display: block;
+  position: absolute;
+  top: -0.5rem;
+  left: 0;
+  height: 1rem;
+}
+nav.menu .menu-arrow .menu-arrow-wrap {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  width: 6rem;
+  height: 0.25rem;
+  padding-top: 0.25rem;
+  overflow: hidden;
+}
+nav.menu .menu-arrow .menu-arrow-wrap span {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  border-radius: 0.125rem;
+  transform: rotate(45deg);
+}
+nav.menu .menu-bg {
+  width: 100%;
+  height: 500px;
+  background: white;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transform: translate3d(0, 0, 0);
+  box-shadow: rgba(50, 50, 93, 0.25) 
+  0px 50px 100px -20px, 
+  rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+nav.menu .menu-dropdown {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  padding: 0.25rem;
+  width: 33.75rem;
+  transform: translateX(-50%);
+}
+nav.menu .menu-dropdown.small {
+  width: 28em;
+}
+nav.menu .menu-dropdown.wide {
+  width: 54em;
+}
+nav.menu .menu-dropdown ul li a {
+  display: block;
+  position: relative;
+  padding: 0.5rem 0;
+  font-size: 0.875rem;
+  color: #0a2540;
+  font-weight: 400;
+  text-decoration: none;
+}
+nav.menu .menu-dropdown ul li a span {
+  display: block;
+  font-weight: 300;
+  opacity: 0.6;
+  margin-top: 0.25rem;
+  transition: opacity 0.3s ease;
+}
+nav.menu .menu-dropdown ul li a:hover span {
+  opacity: 1;
+}
+nav.menu .menu-dropdown ul li ul li a {
+  opacity: 0.8;
+  trabsition: opacity 0.3s ease;
+}
+nav.menu .menu-dropdown ul li ul li a:hover {
+  opacity: 1;
+}
+nav.menu .menu-dropdown ul.has-icons > li > a {
+  padding: 0.75rem 0 0.75rem 1.5rem;
+}
+nav.menu .menu-dropdown 
+ul.has-icons > li > a::before {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  left: 0;
+  width: 1rem;
+  height: 1rem;
+  background: #88add2;
+  border-radius: 0.25rem;
+  transition: background-color 0.3s ease;
+}
+nav.menu .menu-dropdown 
+ul.has-icons > li > a:hover::before {
+  background-color: #0a2540;
+}
+nav.menu .menu-dropdown ul.has-icons ul li {
+  padding-left: 1.5rem;
+}
+nav.menu .menu-dropdown 
+ul.has-icons.icons-large > li a {
+  padding-left: 2.5rem;
+}
+nav.menu .menu-dropdown 
+ul.has-icons.icons-large > li a::before {
+  width: 2rem;
+  height: 2rem;
+}
+nav.menu .menu-dropdown 
+ul.has-icons.icons-large > li a.icon-p::before {
+  background: #936FF7;
+}
+nav.menu .menu-dropdown
+ ul.has-icons.icons-large > li a.icon-b::before {
+  background: #58E2E0;
+}
+nav.menu .menu-dropdown 
+ul.has-icons.icons-large > li a.icon-g::before {
+  background: #55D348;
+}
+nav.menu .menu-dropdown 
+ul.has-icons.icons-large > li a.icon-y::before {
+  background: #FCD662;
+}
+nav.menu .menu-dropdown .col {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+nav.menu .menu-dropdown .col-2 ul {
+  width: 47.5%;
+}
+nav.menu .menu-dropdown .col-3 ul {
+  width: 30%;
+}
+nav.menu .menu-dropdown h2 {
+  width: 100%;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #727f96;
+  padding-top: 0.75rem;
+  margin-bottom: 0.5em;
+}
+nav.menu .menu-dropdown .menu-dropdown-main {
+  padding: 1.25rem 2rem 2rem;
+}
+nav.menu .menu-dropdown .menu-dropdown-sub {
+  padding: 1.25rem 2rem 2rem;
+  background: #f6f9fb;
+  border-radius: 0.5rem;
+}
+
+.hero {
+  height: 100vh;
+  min-height: 20em;
+  background-image: 
+  linear-gradient(to right, #f2709c, #ff9472);
+}
+
